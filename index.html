@@ -50,6 +50,69 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-06-09T09:49:14.000Z"><a href="/2016/06/09/Why I use Play Framework even in Java/">2016-06-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/06/09/Why I use Play Framework even in Java/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><strong>Type safe</strong> even in template</p>
+<ul>
+<li>Catch the bug in compile.</li>
+<li>Reduce code rot, more readable</li>
+</ul>
+</li>
+<li><p><strong>Theaded vs. Evented</strong></p>
+<ul>
+<li><strong>SpringMVC</strong> is Threaded: one thread per request, blocking</li>
+<li><p><strong>Play</strong> is Evented: async, non-blocking io</p>
+<p>In the SOA / Microservice world, a lot of requests between services, the blocking SpringMVC is not a goot choice.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>play.libs.F</strong></p>
+<ul>
+<li>Package with functional methods (compromise for scala guys)</li>
+<li>F.Promise is async, java.current.Future may block</li>
+</ul>
+</li>
+<li><p><strong>Hot reload</strong></p>
+</li>
+<li><p><strong>sbt dist</strong> assemble a executable jar with java env</p>
+<ul>
+<li>No need a container like tomcat, jboss</li>
+<li>Easy deploy, scale and failover</li>
+</ul>
+</li>
+</ul>
+<p>-<br><a href="https://www.youtube.com/watch?v=8z3h4Uv9YbE" target="_blank" rel="external">Play in Linkedin</a> (although it was shared two years ago, play is even better now)</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-05-12T09:52:08.000Z"><a href="/2016/05/12/scala_hk_meet_up_#1/">2016-05-12</a></time>
       
       
@@ -92,7 +155,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:chainkite.com">
   </form>
 </div>
