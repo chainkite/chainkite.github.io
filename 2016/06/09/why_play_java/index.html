@@ -6,8 +6,16 @@
   <title>None.get</title>
   <meta name="author" content="chainkite">
   
-  <meta name="description" content="Scala Meet-up in HK #1The meet-up mainly introduces scala to non-scala programmers.No slides shared yet.Hold by oneskyapp.com on 11 May 2016.
-First Pa">
+  <meta name="description" content="Why I use Play Framework even in Java
+Type safe even in template
+
+Catch the bug in compile.
+Reduce code rot, more readable
+
+
+Theaded vs. Evented
+
+Spri">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -52,7 +60,7 @@ First Pa">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-05-12T09:52:08.000Z"><a href="/2016/05/12/scala_hk_meet_up_#1/">2016-05-12</a></time>
+        <time datetime="2016-06-09T09:49:14.000Z"><a href="/2016/06/09/why_play_java/">2016-06-09</a></time>
       
       
   
@@ -62,13 +70,37 @@ First Pa">
     </header>
     <div class="entry">
       
-        <h2 id="Scala-Meet-up-in-HK-1"><a href="#Scala-Meet-up-in-HK-1" class="headerlink" title="Scala Meet-up in HK #1"></a>Scala Meet-up in HK #1</h2><p>The meet-up mainly introduces scala to non-scala programmers.<br>No slides shared yet.<br>Hold by oneskyapp.com on 11 May 2016.</p>
-<p><strong>First Part:</strong><br>Introduce some attractive scala features, types, syntax (like functional, immutable, Option, for / yield …)</p>
-<p><strong>Second Part:</strong><br>Introduce <code>Future</code> and <code>Akka-Stream</code>.</p>
-<p><code>Future</code>: only talk about usage, nothing to note.</p>
-<p><code>Akka-Stream</code>: easily manage workflows (throttling, up-down streams, …).</p>
-<p><strong>More after the meet-up:</strong><br>Onesky use <strong>RabbitMQ</strong> for most inter-service communications, <strong>Kubernetes</strong> for docker cluster management.<br>More about their <a href="https://medium.com/translate-engineer-error/our-stack-from-monolithic-php-to-microservices-scala-a7950266c4be" target="_blank" rel="external">tech-stack</a><br>Netflix is going to open-source <strong>falcor-java.</strong> </p>
-<p>other keywords: gRPC, delis</p>
+        <h2 id="Why-I-use-Play-Framework-even-in-Java"><a href="#Why-I-use-Play-Framework-even-in-Java" class="headerlink" title="Why I use Play Framework even in Java"></a>Why I use Play Framework even in Java</h2><ul>
+<li><p><strong>Type safe</strong> even in template</p>
+<ul>
+<li>Catch the bug in compile.</li>
+<li>Reduce code rot, more readable</li>
+</ul>
+</li>
+<li><p><strong>Theaded vs. Evented</strong></p>
+<ul>
+<li><strong>SpringMVC</strong> is Threaded: one thread per request, blocking</li>
+<li><p><strong>Play</strong> is Evented: async, non-blocking io</p>
+<p>In the SOA / Microservice world, a lot of requests between services, the blocking SpringMVC is not a goot choice.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>play.libs.F</strong></p>
+<ul>
+<li>Package with functional methods (compromise for scala guys)</li>
+<li>F.Promise is async, java.current.Future may block</li>
+</ul>
+</li>
+<li><p><strong>Hot reload</strong></p>
+</li>
+<li><p><strong>sbt dist</strong> assemble a executable jar with java env</p>
+<ul>
+<li>No need a container like tomcat, jboss</li>
+<li>Easy deploy, scale and failover</li>
+</ul>
+</li>
+</ul>
+<p>-<br><a href="https://www.youtube.com/watch?v=8z3h4Uv9YbE" target="_blank" rel="external">Play in Linkedin</a> (although it was shared two years ago, play is even better now)</p>
 
       
     </div>
@@ -116,7 +148,7 @@ First Pa">
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://chainkite.com/2016/05/12/scala_hk_meet_up_#1/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://chainkite.com/2016/06/09/why_play_java/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
