@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Something Noteworthy in Scrapy | None.get</title>
+  <title>Something noteworthy in Scrapy | None.get</title>
   <meta name="author" content="chainkite">
   
   <meta name="description" content="Above all, I am a beginner in python. scrapy is a crawler framework in python, makes me write a crawler project quite easily in python. But, the progr">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Something Noteworthy in Scrapy"/>
+  <meta property="og:title" content="Something noteworthy in Scrapy"/>
   <meta property="og:site_name" content="None.get"/>
 
   
@@ -55,7 +55,7 @@
       
       
   
-    <h1 class="title">Something Noteworthy in Scrapy</h1>
+    <h1 class="title">Something noteworthy in Scrapy</h1>
   
 
     </header>
@@ -65,7 +65,7 @@
 <p><strong>Start</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br><span class="line"></span><br><span class="line">scrapy startproject first_spider ~/works/first_spider</span><br></pre></td></tr></table></figure></p>
 <p>Then you will get a project structure like this.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">├── first_spider</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── items.py</span><br><span class="line">│   ├── pipelines.py</span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   └── spiders</span><br><span class="line">│       ├── __init__.py</span><br><span class="line">└── scrapy.cfg</span><br></pre></td></tr></table></figure></p>
 <p>Follow the structure, you will find it’s easy to implement your spider, because the only thing you need to consider is the logic you are going to crawl and save.</p>
-<p><strong>There are a lot of tutorials teach you how to write a spider, so I will skip this and jump to something further</strong></p>
+<p><strong>There are a lot of tutorials teaching you how to write a spider, so I will skip and jump to something further</strong></p>
 <p><strong>Speed up your spider</strong><br>What I found out when I run my spider with <code>scrapy crawl first_spider</code>, it is run in single-thread. Async is only working to prevent the parsing from downloading (prevent cpu stucking from io).<br>In order speed up my spider, I split my spider into several tiny spiders. (example below skip details)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">├── first_spider</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   └── spiders</span><br><span class="line">│       ├── __init__.py</span><br><span class="line">│       ├── first_spiders.py</span><br><span class="line">│       └── support</span><br><span class="line">│           ├── __init__.py</span><br><span class="line">│           └── first_spider_support.py</span><br></pre></td></tr></table></figure></p>
 <p>first_spider_support.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class FirstSpiderSupport:</span><br><span class="line">	def __init__(self):</span><br><span class="line">		pass</span><br><span class="line">	</span><br><span class="line">	def do_start_requests(self):</span><br><span class="line">		...</span><br><span class="line">	</span><br><span class="line">	def do_parse(self, response):</span><br><span class="line">		...</span><br></pre></td></tr></table></figure></p>
 <p>first_spiders.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class FirstOneSpider(scrapy.Spider, FirstSpiderSupport):</span><br><span class="line">	name = &quot;first_one_spider&quot;</span><br><span class="line"></span><br><span class="line">	def start_requests(self):</span><br><span class="line">        return self.do_start_requests()</span><br><span class="line"></span><br><span class="line">	def parse(self, response):</span><br><span class="line">        return self.do_parse(response)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class FirstTwoSpider(scrapy.Spider, FirstSpiderSupport):</span><br><span class="line">	name = &quot;first_two_spider&quot;</span><br><span class="line"></span><br><span class="line">	def start_requests(self):</span><br><span class="line">        return self.do_start_requests()</span><br><span class="line"></span><br><span class="line">	def parse(self, response):</span><br><span class="line">        return self.do_parse(response)</span><br><span class="line">        </span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
