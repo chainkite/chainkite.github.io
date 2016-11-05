@@ -6,6 +6,8 @@
   <title>None.get</title>
   <meta name="author" content="chainkite">
   
+  <meta name="description" content="Above all, I am a beginner in python. scrapy is a crawler framework in python, makes me write a crawler project quite easily in python. But, the progr">
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -43,8 +45,7 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -54,7 +55,7 @@
       
       
   
-    <h1 class="title"><a href="/2016/11/05/python_spider_scrapy/"></a></h1>
+    <h1 class="title"></h1>
   
 
     </header>
@@ -78,6 +79,24 @@
       
         
         
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -85,273 +104,27 @@
 </article>
 
 
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
 
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-07-06T14:22:00.000Z"><a href="/2016/07/06/first_shoot_in_python_world/">2016-07-06</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/07/06/first_shoot_in_python_world/"></a></h1>
-  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
-    </header>
-    <div class="entry">
-      
-        <p><strong>Version Manager</strong></p>
-<p><code>pyenv</code>:</p>
-<ul>
-<li>port from <code>rbenv</code></li>
-<li>it cannot find existed python versions in my mac</li>
-<li>set application-specified version: <code>pyenv local x.x.x</code></li>
-<li>set global version: <code>pyenv global x.x.x</code></li>
-<li>detail instructions look at <a href="https://github.com/yyuu/pyenv/blob/master/COMMANDS.md" target="_blank" rel="external">command reference</a>, whose entry is so small and easy to be neglected in README.</li>
-</ul>
-<p><code>pip</code>: …hard to tell</p>
-<ul>
-<li>something like apt-get or homebrew, to install py dependencies…(in system level)</li>
-</ul>
-<p><strong>Build Tool</strong></p>
-<p><code>setup.py</code> ??<br><code>easyinstall</code> + <code>virtualenv</code> ?? no idea</p>
-<p><strong>Noteworthy</strong></p>
-<ul>
-<li>When a module named <code>spam</code> is imported, the interpreter first searches for a built-in module with that name. If not found, it then searches for a file named <code>spam.py</code> in a list of directories given by the variable <code>sys.path</code>.</li>
-<li><code>sys.path</code> is initialized from these locations:<ul>
-<li>The directory containing the input script (or the current directory when no file is specified).</li>
-<li><code>PYTHONPATH</code> (a list of directory names, with the same syntax as the shell variable <code>PATH</code>).</li>
-<li>The installation-dependent default.</li>
-</ul>
-</li>
-<li>Python caches the compiled version of each module in the <code>__pycache__</code> directory under the name <code>module.version.pyc</code></li>
-<li><code>from foo import bar</code>. With <code>__all__</code> in <code>__init__.py</code>, <code>import *</code> will import those named submodules in <code>__all__</code>. Otherwise, it only ensures that the package <code>foo</code> has been imported.<br>  <code>__init__.py</code> will be loaded when import.</li>
-</ul>
-<ul>
-<li><code>print(&#39;xxx&#39;, end = &#39;x&#39;)</code> usually <code>print</code> is ended by <code>&#39;\n&#39;</code>, you can specify a charactor to replace it.</li>
-<li><code>open(file, mode=&#39;r&#39;, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</code><ul>
-<li><code>&#39;r&#39;</code> open only for read</li>
-<li><code>&#39;w&#39;</code> open only for write</li>
-<li><code>&#39;x&#39;</code> open for exclusive creation, failing if the file already exists</li>
-<li><code>&#39;a&#39;</code> open for write (only appending)</li>
-<li><code>&#39;b&#39;</code> open a file in binary mode</li>
-<li><code>&#39;t&#39;</code> text mode</li>
-<li><code>&#39;+&#39;</code> read and write</li>
-</ul>
-</li>
-<li><code>f.seek(f.tell)</code></li>
-<li><code>json.dumps(obj)</code> &lt;-&gt; <code>json.load(str)</code></li>
-<li><code>pickle</code>: serialize and deserialize python objects (like java.io.Serializable)</li>
-<li></li>
-</ul>
-<hr>
-<p><strong>REF</strong><br><a href="https://github.com/yyuu/pyenv" target="_blank" rel="external">pyenv</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-06-27T15:18:00.000Z"><a href="/2016/06/27/first_shoot_in_js_world/">2016-06-27</a></time>
-      
+<div class="fb-comments" data-href="http://chainkite.com/2016/11/05/python_spider_scrapy/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
-    <h1 class="title"><a href="/2016/06/27/first_shoot_in_js_world/">First Shoot in Javascript World</a></h1>
-  
+</section>
 
-    </header>
-    <div class="entry">
-      
-        <p>Trying hard to get into the js world…<br>Then, being killed</p>
-<p><strong>Version Manager</strong></p>
-<p><code>nvm</code>:</p>
-<ul>
-<li>a version manager for <code>Node.js</code>, easily switch current version of node</li>
-<li>In js world (type unsafe), things seem not very compatible with historical versions.</li>
-</ul>
-<p><strong>Build Tool</strong></p>
-<p><code>npm</code>:</p>
-<ul>
-<li>mostly for back-end stuffs (Node.js)</li>
-<li>nested dependencies management</li>
-</ul>
-<p><code>bower</code>: </p>
-<ul>
-<li>strictly, not a build tool, but a package manager</li>
-<li>mostly for front-end stuffs (CSS/HTML Templates/…)</li>
-<li>flat dependencies management (it’s not acceptable there are 3 jQuery in your front-end project)</li>
-<li>BTW, we install <code>bower</code> through <code>npm</code>, hahaha</li>
-</ul>
-<p><code>gulp</code>:</p>
-<ul>
-<li>a task runner, install through <code>npm</code> as well</li>
-<li>plenty of plugins</li>
-<li>usage example: minify all the js/css files and so on</li>
-</ul>
-<p><em>p.s.</em><br>In <code>scala</code> world, <code>sbt</code> and its plugins takeover everything above.</p>
-<hr>
-<p><strong>Test</strong></p>
-<p><code>jasmine</code>: Behavior-Driven Development Framework</p>
-<p><code>karma</code>:</p>
-<ul>
-<li>test runner</li>
-<li>use the browser js engine to test</li>
-</ul>
-<p><code>protractor</code>:</p>
-<ul>
-<li>angular’s e2e test framework, with selenium</li>
-<li>real and live browser test</li>
-</ul>
-<hr>
-<p><strong>AngularJS</strong></p>
-<p>Module -&gt; Directive -&gt; Component</p>
-<p><strong>ReactJS</strong></p>
-<p><strong><em>To Be Continue</em></strong></p>
-<hr>
-<p><strong>REF</strong><br><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a><br><a href="http://bower.io" target="_blank" rel="external">bower</a><br><a href="https://www.npmjs.com" target="_blank" rel="external">npm</a><br><a href="http://ng-learn.org/2013/11/Bower-vs-npm/" target="_blank" rel="external">bower vs. npm</a><br><a href="https://github.com/jasmine/jasmine" target="_blank" rel="external">jasmine</a><br><a href="https://github.com/karma-runner/karma" target="_blank" rel="external">karma</a><br><a href="http://andy-carter.com/blog/a-beginners-guide-to-the-task-runner-gulp" target="_blank" rel="external">A Beginners Guide to the Task Runner Gulp</a><br><a href="http://andy-carter.com/blog/a-beginners-guide-to-package-manager-bower-and-using-gulp-to-manage-components" target="_blank" rel="external">A Beginners Guide to Package Manager Bower and Using Gulp to Manage Components</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-06-09T09:49:00.000Z"><a href="/2016/06/09/why_play_java/">2016-06-09</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/06/09/why_play_java/">Why I use Play Framework even in Java</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><p><strong>Type safe</strong> even in template</p>
-<ul>
-<li>Catch the bug in compile.</li>
-<li>Reduce code rot, more readable</li>
-</ul>
-</li>
-<li><p><strong>Theaded vs. Evented</strong></p>
-<ul>
-<li><strong>SpringMVC</strong> is Threaded: one thread per request, blocking</li>
-<li><p><strong>Play</strong> is Evented: async, non-blocking io</p>
-<p>In the SOA / Microservice world, a lot of requests between services, the blocking SpringMVC is not a goot choice.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>play.libs.F</strong></p>
-<ul>
-<li>Package with functional methods (compromise for scala guys)</li>
-<li>F.Promise is async, java.current.Future may block</li>
-</ul>
-</li>
-<li><p><strong>Hot reload</strong></p>
-</li>
-<li><p><strong>sbt dist</strong> assemble a executable jar with java env</p>
-<ul>
-<li>No need a container like tomcat, jboss</li>
-<li>Easy deploy, scale and failover</li>
-</ul>
-</li>
-</ul>
-<p>-<br><a href="https://www.youtube.com/watch?v=8z3h4Uv9YbE" target="_blank" rel="external">Play in Linkedin</a> (although it was shared two years ago, play is even better now)</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-05-12T09:52:00.000Z"><a href="/2016/05/12/scala_hk_meet_up_#1/">2016-05-12</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/05/12/scala_hk_meet_up_#1/">Scala Meet-up in HK</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>The meet-up mainly introduces scala to non-scala programmers.<br>No slides shared yet.<br>Hold by oneskyapp.com on 11 May 2016.</p>
-<p><strong>First Part:</strong><br>Introduce some attractive scala features, types, syntax (like functional, immutable, Option, for / yield …)</p>
-<p><strong>Second Part:</strong><br>Introduce <code>Future</code> and <code>Akka-Stream</code>.</p>
-<p><code>Future</code>: only talk about usage, nothing to note.</p>
-<p><code>Akka-Stream</code>: easily manage workflows (throttling, up-down streams, …).</p>
-<p><strong>More after the meet-up:</strong><br>Onesky use <strong>RabbitMQ</strong> for most inter-service communications, <strong>Kubernetes</strong> for docker cluster management.<br>More about their <a href="https://medium.com/translate-engineer-error/our-stack-from-monolithic-php-to-microservices-scala-a7950266c4be" target="_blank" rel="external">tech-stack</a><br>Netflix is going to open-source <strong>falcor-java.</strong> </p>
-<p>other keywords: gRPC, delis</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
