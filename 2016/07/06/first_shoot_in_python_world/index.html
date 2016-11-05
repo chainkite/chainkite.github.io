@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>None.get</title>
+  <meta name="author" content="chainkite">
+  
+  <meta name="description" content="Version Manager
+pyenv:
+
+port from rbenv
+it cannot find existed python versions in my mac
+set application-specified version: pyenv local x.x.x
+set glob">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="None.get"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="None.get" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">None.get</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-07-06T14:22:00.000Z"><a href="/2016/07/06/first_shoot_in_python_world/">2016-07-06</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><strong>Version Manager</strong></p>
+<p><code>pyenv</code>:</p>
+<ul>
+<li>port from <code>rbenv</code></li>
+<li>it cannot find existed python versions in my mac</li>
+<li>set application-specified version: <code>pyenv local x.x.x</code></li>
+<li>set global version: <code>pyenv global x.x.x</code></li>
+<li>detail instructions look at <a href="https://github.com/yyuu/pyenv/blob/master/COMMANDS.md" target="_blank" rel="external">command reference</a>, whose entry is so small and easy to be neglected in README.</li>
+</ul>
+<p><code>pip</code>: …hard to tell</p>
+<ul>
+<li>something like apt-get or homebrew, to install py dependencies…(in system level)</li>
+</ul>
+<p><strong>Build Tool</strong></p>
+<p><code>setup.py</code> ??<br><code>easyinstall</code> + <code>virtualenv</code> ?? no idea</p>
+<p><strong>Noteworthy</strong></p>
+<ul>
+<li>When a module named <code>spam</code> is imported, the interpreter first searches for a built-in module with that name. If not found, it then searches for a file named <code>spam.py</code> in a list of directories given by the variable <code>sys.path</code>.</li>
+<li><code>sys.path</code> is initialized from these locations:<ul>
+<li>The directory containing the input script (or the current directory when no file is specified).</li>
+<li><code>PYTHONPATH</code> (a list of directory names, with the same syntax as the shell variable <code>PATH</code>).</li>
+<li>The installation-dependent default.</li>
+</ul>
+</li>
+<li>Python caches the compiled version of each module in the <code>__pycache__</code> directory under the name <code>module.version.pyc</code></li>
+<li><code>from foo import bar</code>. With <code>__all__</code> in <code>__init__.py</code>, <code>import *</code> will import those named submodules in <code>__all__</code>. Otherwise, it only ensures that the package <code>foo</code> has been imported.<br>  <code>__init__.py</code> will be loaded when import.</li>
+</ul>
+<ul>
+<li><code>print(&#39;xxx&#39;, end = &#39;x&#39;)</code> usually <code>print</code> is ended by <code>&#39;\n&#39;</code>, you can specify a charactor to replace it.</li>
+<li><code>open(file, mode=&#39;r&#39;, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</code><ul>
+<li><code>&#39;r&#39;</code> open only for read</li>
+<li><code>&#39;w&#39;</code> open only for write</li>
+<li><code>&#39;x&#39;</code> open for exclusive creation, failing if the file already exists</li>
+<li><code>&#39;a&#39;</code> open for write (only appending)</li>
+<li><code>&#39;b&#39;</code> open a file in binary mode</li>
+<li><code>&#39;t&#39;</code> text mode</li>
+<li><code>&#39;+&#39;</code> read and write</li>
+</ul>
+</li>
+<li><code>f.seek(f.tell)</code></li>
+<li><code>json.dumps(obj)</code> &lt;-&gt; <code>json.load(str)</code></li>
+<li><code>pickle</code>: serialize and deserialize python objects (like java.io.Serializable)</li>
+<li></li>
+</ul>
+<hr>
+<p><strong>REF</strong><br><a href="https://github.com/yyuu/pyenv" target="_blank" rel="external">pyenv</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://chainkite.com/2016/07/06/first_shoot_in_python_world/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:chainkite.com">
+  </form>
+</div>
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 chainkite
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

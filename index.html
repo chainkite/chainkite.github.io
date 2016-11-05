@@ -50,6 +50,84 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-07-06T14:22:00.000Z"><a href="/2016/07/06/first_shoot_in_python_world/">2016-07-06</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/07/06/first_shoot_in_python_world/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><strong>Version Manager</strong></p>
+<p><code>pyenv</code>:</p>
+<ul>
+<li>port from <code>rbenv</code></li>
+<li>it cannot find existed python versions in my mac</li>
+<li>set application-specified version: <code>pyenv local x.x.x</code></li>
+<li>set global version: <code>pyenv global x.x.x</code></li>
+<li>detail instructions look at <a href="https://github.com/yyuu/pyenv/blob/master/COMMANDS.md" target="_blank" rel="external">command reference</a>, whose entry is so small and easy to be neglected in README.</li>
+</ul>
+<p><code>pip</code>: …hard to tell</p>
+<ul>
+<li>something like apt-get or homebrew, to install py dependencies…(in system level)</li>
+</ul>
+<p><strong>Build Tool</strong></p>
+<p><code>setup.py</code> ??<br><code>easyinstall</code> + <code>virtualenv</code> ?? no idea</p>
+<p><strong>Noteworthy</strong></p>
+<ul>
+<li>When a module named <code>spam</code> is imported, the interpreter first searches for a built-in module with that name. If not found, it then searches for a file named <code>spam.py</code> in a list of directories given by the variable <code>sys.path</code>.</li>
+<li><code>sys.path</code> is initialized from these locations:<ul>
+<li>The directory containing the input script (or the current directory when no file is specified).</li>
+<li><code>PYTHONPATH</code> (a list of directory names, with the same syntax as the shell variable <code>PATH</code>).</li>
+<li>The installation-dependent default.</li>
+</ul>
+</li>
+<li>Python caches the compiled version of each module in the <code>__pycache__</code> directory under the name <code>module.version.pyc</code></li>
+<li><code>from foo import bar</code>. With <code>__all__</code> in <code>__init__.py</code>, <code>import *</code> will import those named submodules in <code>__all__</code>. Otherwise, it only ensures that the package <code>foo</code> has been imported.<br>  <code>__init__.py</code> will be loaded when import.</li>
+</ul>
+<ul>
+<li><code>print(&#39;xxx&#39;, end = &#39;x&#39;)</code> usually <code>print</code> is ended by <code>&#39;\n&#39;</code>, you can specify a charactor to replace it.</li>
+<li><code>open(file, mode=&#39;r&#39;, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</code><ul>
+<li><code>&#39;r&#39;</code> open only for read</li>
+<li><code>&#39;w&#39;</code> open only for write</li>
+<li><code>&#39;x&#39;</code> open for exclusive creation, failing if the file already exists</li>
+<li><code>&#39;a&#39;</code> open for write (only appending)</li>
+<li><code>&#39;b&#39;</code> open a file in binary mode</li>
+<li><code>&#39;t&#39;</code> text mode</li>
+<li><code>&#39;+&#39;</code> read and write</li>
+</ul>
+</li>
+<li><code>f.seek(f.tell)</code></li>
+<li><code>json.dumps(obj)</code> &lt;-&gt; <code>json.load(str)</code></li>
+<li><code>pickle</code>: serialize and deserialize python objects (like java.io.Serializable)</li>
+<li></li>
+</ul>
+<hr>
+<p><strong>REF</strong><br><a href="https://github.com/yyuu/pyenv" target="_blank" rel="external">pyenv</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-06-27T15:18:00.000Z"><a href="/2016/06/27/first_shoot_in_js_world/">2016-06-27</a></time>
       
       
@@ -61,6 +139,12 @@
     <div class="entry">
       
         <p>Trying hard to get into the js world…<br>Then, being killed</p>
+<p><strong>Version Manager</strong></p>
+<p><code>nvm</code>:</p>
+<ul>
+<li>a version manager for <code>Node.js</code>, easily switch current version of node</li>
+<li>In js world (type unsafe), things seem not very compatible with historical versions.</li>
+</ul>
 <p><strong>Build Tool</strong></p>
 <p><code>npm</code>:</p>
 <ul>
@@ -80,13 +164,8 @@
 <li>plenty of plugins</li>
 <li>usage example: minify all the js/css files and so on</li>
 </ul>
-<p><code>nvm</code>:</p>
-<ul>
-<li>a version manager for <code>Node.js</code>, easily switch current version of node</li>
-<li>In js world (type unsafe), things seem not very compatible with historical versions.</li>
-</ul>
 <p><em>p.s.</em><br>In <code>scala</code> world, <code>sbt</code> and its plugins takeover everything above.</p>
-<p>–</p>
+<hr>
 <p><strong>Test</strong></p>
 <p><code>jasmine</code>: Behavior-Driven Development Framework</p>
 <p><code>karma</code>:</p>
@@ -233,7 +312,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Buscar">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:chainkite.com">
   </form>
 </div>
